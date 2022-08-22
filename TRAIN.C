@@ -134,8 +134,8 @@ floodfill(10,getmaxy()-225,RED);
 
 setcolor(BLUE);
 setfillstyle(SOLID_FILL,BLUE);
-pieslice(6,getmaxy()-220,0,360,3);
-pieslice(18,getmaxy()-220,0,360,3);
+pieslice(6,getmaxy()-220,0,360,4);
+pieslice(18,getmaxy()-220,0,360,4);
 
 // lines joining last and second last boogie
 
@@ -148,7 +148,59 @@ setcolor(RED);
 setfillstyle(SOLID_FILL,RED);
 rectangle(32,getmaxy()-235,70,getmaxy()-220);
 line(32,getmaxy()-230,70,getmaxy()-230);
+floodfill(35,getmaxy()-225,RED);
 
+//wheels of second last boogie
+
+setcolor(BLUE);
+setfillstyle(SOLID_FILL,BLUE);
+pieslice(40,getmaxy()-220,0,360,4);
+pieslice(60,getmaxy()-220,0,360,4);
+
+//line joining second last and preciding
+
+line(71,getmaxy()-228,77,getmaxy()-228);
+line(71,getmaxy()-225,77,getmaxy()-225);
+
+//third last boogie
+
+setcolor(RED);
+setfillstyle(SOLID_FILL,RED);
+rectangle(77,getmaxy()-235,115,getmaxy()-220);
+line(77,getmaxy()-230,115,getmaxy()-230);
+floodfill(78,getmaxy()-228,RED);
+
+//wheels of third last boogie
+
+setcolor(BLUE);
+setfillstyle(SOLID_FILL,BLUE);
+pieslice(85,getmaxy()-220,0,360,4);
+pieslice(105,getmaxy()-220,0,360,4);
+
+//line joining third and preciding boogie
+
+line(116,getmaxy()-228,122,getmaxy()-228);
+line(116,getmaxy()-225,122,getmaxy()-225);
+
+//fourth last boogie
+
+setcolor(RED);
+setfillstyle(SOLID_FILL,RED);
+rectangle(122,getmaxy()-235,160,getmaxy()-220);
+line(122,getmaxy()-230,160,getmaxy()-230);
+floodfill(124,getmaxy()-228,RED);
+
+//wheels for third last boogie
+
+setcolor(BLUE);
+setfillstyle(SOLID_FILL,BLUE);
+pieslice(130,getmaxy()-220,0,360,4);
+pieslice(150,getmaxy()-220,0,360,4);
+
+//line joining third last and engine
+
+line(161,getmaxy()-228,167,getmaxy()-228);
+line(161,getmaxy()-225,167,getmaxy()-225);
 
 
 
