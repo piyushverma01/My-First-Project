@@ -202,7 +202,45 @@ pieslice(150,getmaxy()-220,0,360,4);
 line(161,getmaxy()-228,167,getmaxy()-228);
 line(161,getmaxy()-225,167,getmaxy()-225);
 
+//engine of the train
 
+setcolor(RED);
+setfillstyle(SOLID_FILL,RED);
+rectangle(167,getmaxy()-245,185,getmaxy()-220);
+
+line(167,getmaxy()-240,185,getmaxy()-240);
+floodfill(169,getmaxy()-238,RED);
+
+rectangle(185,getmaxy()-235,205,getmaxy()-220);
+floodfill(186,getmaxy()-232,RED);
+
+rectangle(190,getmaxy()-250,196,getmaxy()-235);
+floodfill(191,getmaxy()-249,RED);
+
+//smoke of engine
+
+setcolor(7);
+line(190,getmaxy()-253,196,getmaxy()-253);
+line(190,getmaxy()-255,192,getmaxy()-255);
+line(194,getmaxy()-255,196,getmaxy()-255);
+line(188,getmaxy()-257,194,getmaxy()-257);
+line(187,getmaxy()-259,193,getmaxy()-259);
+line(185,getmaxy()-261,190,getmaxy()-261);
+line(192,getmaxy()-261,194,getmaxy()-261);
+line(188,getmaxy()-263,192,getmaxy()-263);
+line(180,getmaxy()-265,190,getmaxy()-265);
+
+//wheels of engine
+setcolor(BLUE);
+setfillstyle(SOLID_FILL,BLUE);
+pieslice(175,getmaxy()-220,0,360,5);
+pieslice(188,getmaxy()-220,0,360,4);
+pieslice(200,getmaxy()-220,0,360,4);
+
+//front section of engine
+
+sector(206,getmaxy()-228,0,90,8,7);
+sector(206,getmaxy()-228,270,360,8,8);
 
 getch();
 }
