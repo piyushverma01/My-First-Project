@@ -7,7 +7,7 @@ void main()
 int i;
 int gdriver= DETECT,gm,errorcode;
 initgraph(&gdriver,&gm,"c:\\TURBOC3\\bgi");
-for(i=0;i<getmaxx();i++)
+for(i=-300;i<getmaxx();i=i+10)
 {
 setbkcolor(LIGHTBLUE);
 setcolor(WHITE);
@@ -15,45 +15,45 @@ setfillstyle(SOLID_FILL,WHITE);
 
    //FOR CLOUD 1
 
-line(330+i,100,422+i,100);
+line(330+(i/10),100,422+(i/10),100);
 
 //upper side
 
-sector(345+i,99,90,180,15,10);
-sector(360+i,99,90,180,20,15);
-sector(375+i,99,0,180,25,20);
-sector(390+i,99,0,180,20,25);
-sector(415+i,100,0,180,15,10);
+sector(345+(i/10),99,90,180,15,10);
+sector(360+(i/10),99,90,180,20,15);
+sector(375+(i/10),99,0,180,25,20);
+sector(390+(i/10),99,0,180,20,25);
+sector(415+(i/10),100,0,180,15,10);
 
 //lower side
 
 
-sector(345+i,99,180,360,15,10);
-sector(360+i,99,180,360,20,15);
-sector(375+i,99,180,360,25,20);
-sector(390+i,99,180,360,20,25);
-sector(415+i,100,180,360,15,10);
+sector(345+(i/10),99,180,360,15,10);
+sector(360+(i/10),99,180,360,20,15);
+sector(375+(i/10),99,180,360,25,20);
+sector(390+(i/10),99,180,360,20,25);
+sector(415+(i/10),100,180,360,15,10);
 
 //cloud 2
 
-   line(100+i,150,190+i,150);
+   line(100+(i/6),150,190+(i/6),150);
 
 //upper side
 
-sector(115+i,150,90,180,15,10);
-sector(130+i,150,90,180,20,15);
-sector(145+i,150,0,180,25,20);
-sector(160+i,150,0,180,20,25);
-sector(175+i,150,0,180,15,10);
+sector(115+(i/6),150,90,180,15,10);
+sector(130+(i/6),150,90,180,20,15);
+sector(145+(i/6),150,0,180,25,20);
+sector(160+(i/6),150,0,180,20,25);
+sector(175+(i/6),150,0,180,15,10);
 
 //lower side
 
 
-sector(115+i,150,180,360,15,10);
-sector(130+i,150,180,360,20,15);
-sector(145+i,150,180,360,25,20);
-sector(160+i,150,180,360,20,25);
-sector(175+i,150,180,360,15,10);
+sector(115+(i/6),150,180,360,15,10);
+sector(130+(i/6),150,180,360,20,15);
+sector(145+(i/6),150,180,360,25,20);
+sector(160+(i/6),150,180,360,20,25);
+sector(175+(i/6),150,180,360,15,10);
 
 //BRIDGE
 
@@ -220,7 +220,7 @@ floodfill(191+i,getmaxy()-249,RED);
 
 //smoke of engine
 
-setcolor(7);
+setcolor(7);    //7 refers to gray colour
 line(190+i,getmaxy()-253,196+i,getmaxy()-253);
 line(190+i,getmaxy()-255,192+i,getmaxy()-255);
 line(194+i,getmaxy()-255,196+i,getmaxy()-255);
@@ -232,6 +232,7 @@ line(188+i,getmaxy()-263,192+i,getmaxy()-263);
 line(180+i,getmaxy()-265,190+i,getmaxy()-265);
 
 //wheels of engine
+
 setcolor(BLUE);
 setfillstyle(SOLID_FILL,BLUE);
 pieslice(175+i,getmaxy()-220,0,360,5);
@@ -244,6 +245,26 @@ sector(206+i,getmaxy()-228,0,90,8,7);
 sector(206+i,getmaxy()-228,270,360,8,8);
 delay(150);
 cleardevice();
+
+// giving some sounds to train
+
+if(i%6==0)
+{
+sound(600);
 }
+else if(i%8==0)
+{
+sound(700);
+}
+else if(i%10==0)
+{
+sound(500);
+}
+else
+{
+sound(800);
+}
+}
+nosound();
 getch();
 }
